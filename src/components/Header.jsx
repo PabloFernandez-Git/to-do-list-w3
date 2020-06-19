@@ -11,6 +11,7 @@ const Navbar = styled.div`
     height: 40px;
     margin-left: auto;
     margin-right: auto;
+    text-align: left;
 `
 
 
