@@ -6,9 +6,9 @@ import {generate as id} from 'shortid'
 const Input = styled.input`
     border: none;
     border: 1px solid ${allColors.border};
-    margin-top: 40px;
-    width: 20rem;
-    height: 1.5rem;
+    margin-top: 45px;
+    width: 25rem;
+    height: 2rem;
 `
 
 const Button = styled.button`

@@ -5,10 +5,10 @@ import allColors from '../styles/colors'
 const Navbar = styled.div`
     background-color: ${allColors.headerBackgroundColor};
     color: #fff;
-    line-height: 40px;
+    line-height: 35px;
     padding: 10px;
     width: 90%;
-    height: 40px;
+    height: 35px;
     margin-left: auto;
     margin-right: auto;
     text-align: left;
