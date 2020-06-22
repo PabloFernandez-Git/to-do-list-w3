@@ -19,13 +19,20 @@ const GlobalStyle = createGlobalStyle`
 
 class App extends Component {
 
+
+  handleSubmit = (e) => {
+    e.preventDefault()
+  }
+
   render() {
 
     return (
       <>
         <GlobalStyle />
         <Header />
-        <FormTask />
+        <FormTask
+          handleSubmit={this.handleSubmit}
+        />
         <div>
           <Task></Task>
         </div>
@@ -33,8 +40,6 @@ class App extends Component {
     )
   }
 }
-
-
 
 
 export default App;

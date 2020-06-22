@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import allColors from '../styles/colors'
-import {generate as id} from 'shortid'
+import { generate as id } from 'shortid'
 
 const Input = styled.input`
     border: none;
@@ -29,10 +29,10 @@ const Button = styled.button`
 `
 
 
-const FormTask = () => {
+const FormTask = ({ handleSubmit }) => {
     return (
-        <form>
-            <Input placeholder="Ingrese una tarea"></Input>
+        <form onSubmit={handleSubmit}>
+            <Input name="title" type="text" placeholder="Ingrese una tarea" />
             <Button>Agregar tarea</Button>
         </form>
     )

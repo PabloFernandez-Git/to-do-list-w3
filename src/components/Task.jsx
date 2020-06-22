@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import allColors from '../styles/colors'
 
+
 const TaskContainer = styled.div`
     display: grid;
     grid-template-columns: 30px 1fr 50px;
@@ -18,7 +19,7 @@ const TaskContainer = styled.div`
 `
 
 const TaskText = styled.p`
-    color: ${allColors.font}
+    color: ${allColors.font};
 `
 
 const TaskButton = styled.button`
@@ -52,4 +53,7 @@ const Task = () => {
 export default Task;
 
 
-// Componente que contendra la lista de tareas que vayamos agregando
+/* Componente que contendra la lista de tareas que vayamos agregando.
+Tendra un 'checkbox' para tachar la tarea y un boton para eliminarla.
+
+*/
