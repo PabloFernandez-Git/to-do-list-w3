@@ -39,7 +39,7 @@ const TaskButton = styled.button`
 `
 
 
-const Task = ({ title, done, handleCompleteTask }) => {
+const Task = ({ title, done, handleCompleteTask, handleDeleteTask }) => {
     return (
         <TaskContainer>
             <input
@@ -48,7 +48,7 @@ const Task = ({ title, done, handleCompleteTask }) => {
                 defaultChecked={done}
             />
             <TaskText done={done}>{title}</TaskText>
-            <TaskButton>Borrar</TaskButton>
+            <TaskButton onClick={handleDeleteTask}>Borrar</TaskButton>
         </TaskContainer>
     )
 }

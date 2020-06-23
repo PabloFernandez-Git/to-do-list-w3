@@ -62,6 +62,14 @@ class App extends Component {
     this.setState({ tasks: currentTasks })
   }
 
+
+  handleDeleteTask = (id) => {
+    let currentTasks = this.state.tasks
+    currentTasks = currentTasks.filter(task => task.id !== id)
+
+    this.setState({ tasks: currentTasks })
+}
+
   render() {
 
     const { tasks } = this.state
@@ -81,6 +89,7 @@ class App extends Component {
                 done={task.done}
                 title={task.title}
                 handleCompleteTask={() => this.handleCompleteTask(task.id)}
+                handleDeleteTask={() => this.handleDeleteTask(task.id)}
               />
             ))
           }
