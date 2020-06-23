@@ -32,6 +32,7 @@ class App extends Component {
     e.preventDefault()
     if (e.target.title.value.trim() !== '') {
       this.createNewTask(e.target.title.value)
+      e.target.title.value = ''
     }
   }
 
@@ -68,7 +69,7 @@ class App extends Component {
     currentTasks = currentTasks.filter(task => task.id !== id)
 
     this.setState({ tasks: currentTasks })
-}
+  }
 
   render() {
 
@@ -81,6 +82,9 @@ class App extends Component {
         <FormTask
           handleSubmit={this.handleSubmit}
         />
+
+        {this.state.tasks.length === 0 && <p>No hay tareas pendientes</p>}
+
         <div>
           {
             tasks.map(task => (
