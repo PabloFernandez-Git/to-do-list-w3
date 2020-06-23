@@ -38,13 +38,13 @@ const TaskButton = styled.button`
 `
 
 
-const Task = () => {
+const Task = ({ title }) => {
     return (
         <TaskContainer>
-            <input 
+            <input
                 type="checkbox"
             />
-            <TaskText>{'Tarea 1'}</TaskText>
+            <TaskText>{title}</TaskText>
             <TaskButton>Borrar</TaskButton>
         </TaskContainer>
     )

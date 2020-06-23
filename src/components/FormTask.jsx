@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import allColors from '../styles/colors'
-import { generate as id } from 'shortid'
+
 
 const Input = styled.input`
     border: none;

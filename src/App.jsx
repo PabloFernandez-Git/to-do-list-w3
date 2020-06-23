@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { createGlobalStyle } from 'styled-components'
-import { generate as id } from 'shortid'
+import {generate as id} from 'shortid';
 import allColors from './styles/colors'
 import Header from './components/Header'
 import FormTask from './components/FormTask'
@@ -19,12 +19,22 @@ const GlobalStyle = createGlobalStyle`
 
 class App extends Component {
 
+  state = {
+    tasks: [
+      {
+        title: 'Ir al supermercado',
+        done: false
+      }
+    ]
+  }
 
   handleSubmit = (e) => {
     e.preventDefault()
   }
 
   render() {
+
+    const { tasks } = this.state
 
     return (
       <>
@@ -34,7 +44,14 @@ class App extends Component {
           handleSubmit={this.handleSubmit}
         />
         <div>
-          <Task></Task>
+          {
+            tasks.map(task => (
+              <Task
+                key={id()} 
+                title={task.title}
+              />
+            ))
+          }
         </div>
       </>
     )
