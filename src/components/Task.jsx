@@ -20,6 +20,7 @@ const TaskContainer = styled.div`
 
 const TaskText = styled.p`
     color: ${allColors.font};
+    text-decoration:${({ done }) => done ? 'line-through' : 'none'};
 `
 
 const TaskButton = styled.button`
@@ -38,13 +39,15 @@ const TaskButton = styled.button`
 `
 
 
-const Task = ({ title }) => {
+const Task = ({ title, done, handleCompleteTask }) => {
     return (
         <TaskContainer>
             <input
                 type="checkbox"
+                onChange={handleCompleteTask}
+                defaultChecked={done}
             />
-            <TaskText>{title}</TaskText>
+            <TaskText done={done}>{title}</TaskText>
             <TaskButton>Borrar</TaskButton>
         </TaskContainer>
     )

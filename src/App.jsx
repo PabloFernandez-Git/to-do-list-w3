@@ -47,6 +47,21 @@ class App extends Component {
     this.setState({ tasks: allTasks })
   }
 
+  getTask = (id) => {
+    const task = this.state.tasks.find(task => task.id === id)
+    return task
+  }
+
+  handleCompleteTask = (id) => {
+    const currentTasks = this.state.tasks
+    const task = this.getTask(id)
+    const index = currentTasks.indexOf(task)
+
+    currentTasks[index].done = !currentTasks[index].done
+
+    this.setState({ tasks: currentTasks })
+  }
+
   render() {
 
     const { tasks } = this.state
@@ -63,7 +78,9 @@ class App extends Component {
             tasks.map(task => (
               <Task
                 key={id()}
+                done={task.done}
                 title={task.title}
+                handleCompleteTask={() => this.handleCompleteTask(task.id)}
               />
             ))
           }
