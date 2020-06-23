@@ -15,6 +15,7 @@ const Button = styled.button`
     display: block;
     margin: 0 auto;
     margin-top: 20px;
+    margin-bottom: 35px;
     width: 10rem;
     height: 2rem;
     color: #fff;

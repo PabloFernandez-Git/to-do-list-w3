@@ -15,7 +15,7 @@ const TaskContainer = styled.div`
     border: 1px solid ${allColors.border};
     border-radius: 5px;
     margin: 0 auto;
-    margin-top: 35px;
+    margin-top: 20px;
 `
 
 const TaskText = styled.p`

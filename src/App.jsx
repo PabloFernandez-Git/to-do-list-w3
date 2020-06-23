@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { createGlobalStyle } from 'styled-components'
-import {generate as id} from 'shortid';
+import { generate as id } from 'shortid';
 import allColors from './styles/colors'
 import Header from './components/Header'
 import FormTask from './components/FormTask'
@@ -30,6 +30,21 @@ class App extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
+    if (e.target.title.value.trim() !== '') {
+      this.createNewTask(e.target.title.value)
+    }
+  }
+
+  createNewTask = (title) => {
+    const newTask = {
+      id: id(),
+      title: title,
+      done: false
+    }
+
+    const allTasks = [...this.state.tasks, newTask]
+
+    this.setState({ tasks: allTasks })
   }
 
   render() {
@@ -47,7 +62,7 @@ class App extends Component {
           {
             tasks.map(task => (
               <Task
-                key={id()} 
+                key={id()}
                 title={task.title}
               />
             ))
